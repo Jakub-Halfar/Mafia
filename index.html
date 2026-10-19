@@ -170,10 +170,23 @@
         <div class="footer-bottom">
             <span>© 2026 Školní projekt · Vytvořeno s respektem k originálu</span>
             <div class="validation-links">
-                <a class="validation-badge html-badge" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fexample.com" target="_blank" rel="noopener" aria-label="Ověřit HTML na validator.w3.org"><span>HTML</span><b>5</b></a>
-                <a class="validation-badge css-badge" href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener" aria-label="Ověřit CSS na jigsaw.w3.org"><span>CSS</span><b>3</b></a>
+                <a id="html-validation" class="validation-badge html-badge" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fraw.githubusercontent.com%2FJakub-Halfar%2FMafia%2Fmain%2Findex.html" target="_blank" rel="noopener" aria-label="Ověřit HTML na validator.w3.org"><span>HTML</span><b>5</b></a>
+                <a id="css-validation" class="validation-badge css-badge" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fraw.githubusercontent.com%2FJakub-Halfar%2FMafia%2Fmain%2Fstyle.css&amp;profile=css3&amp;usermedium=all&amp;warning=1&amp;lang=cs" target="_blank" rel="noopener" aria-label="Ověřit CSS na jigsaw.w3.org"><span>CSS</span><b>3</b></a>
             </div>
         </div>
     </footer>
+    <script>
+        const pageUrl = window.location.href;
+        const stylesheetUrl = new URL('style.css', pageUrl).href;
+        const fallbackPageUrl = 'https://raw.githubusercontent.com/Jakub-Halfar/Mafia/main/index.html';
+        const fallbackStylesheetUrl = 'https://raw.githubusercontent.com/Jakub-Halfar/Mafia/main/style.css';
+        const htmlUrl = pageUrl.startsWith('http') ? pageUrl : fallbackPageUrl;
+        const cssUrl = stylesheetUrl.startsWith('http') ? stylesheetUrl : fallbackStylesheetUrl;
+
+        document.getElementById('html-validation').href =
+            `https://validator.w3.org/nu/?doc=${encodeURIComponent(htmlUrl)}`;
+        document.getElementById('css-validation').href =
+            `https://jigsaw.w3.org/css-validator/validator?uri=${encodeURIComponent(cssUrl)}&profile=css3&usermedium=all&warning=1&lang=cs`;
+    </script>
 </body>
 </html>
