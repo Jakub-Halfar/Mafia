@@ -1,0 +1,139 @@
+:root {
+    --black: #0d0c0c;
+    --surface: #171313;
+    --wine: #8e1c2e;
+    --wine-light: #bd3047;
+    --cream: #ede4d6;
+    --muted: #9e9691;
+    --line: rgba(237, 228, 214, .16);
+    --display: 'Playfair Display', Georgia, serif;
+    --body: 'Oswald', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--black); color: var(--cream); font-family: var(--body); font-size: 1rem; letter-spacing: .03em; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.site-header { align-items: center; background: rgba(13, 12, 12, .9); border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; left: 0; padding: 1.25rem 6vw; position: absolute; right: 0; top: 0; z-index: 2; }
+.logo { font-family: var(--display); font-size: 1.65rem; font-weight: 800; letter-spacing: .14em; }
+.logo span { color: var(--wine-light); }
+.main-nav { display: flex; gap: clamp(1rem, 3vw, 3rem); }
+.main-nav a { color: var(--muted); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; transition: color .2s; }
+.main-nav a:hover, .main-nav a:focus { color: var(--cream); }
+
+.hero { align-items: center; background: linear-gradient(90deg, rgba(13,12,12,.96) 10%, rgba(13,12,12,.53) 60%, rgba(13,12,12,.25)), url('family.jpg') center/cover; display: flex; min-height: 100vh; overflow: hidden; padding: 8rem 12vw; position: relative; }
+.hero::after { background: linear-gradient(transparent, var(--black)); bottom: 0; content: ''; height: 25%; left: 0; position: absolute; right: 0; }
+.hero-content { max-width: 690px; position: relative; z-index: 1; }
+.eyebrow { color: var(--wine-light); font-size: .75rem; font-weight: 600; letter-spacing: .25em; margin: 0 0 1rem; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-family: var(--display); font-size: clamp(4.5rem, 13vw, 11rem); letter-spacing: .04em; line-height: .85; margin: 0 0 2rem; text-shadow: 5px 8px 0 rgba(142, 28, 46, .28); }
+.hero-text { color: #d0c5ba; font-size: 1.15rem; line-height: 1.7; max-width: 480px; }
+.button { background: var(--wine); display: inline-block; font-size: .8rem; letter-spacing: .12em; margin-top: 1.25rem; padding: 1rem 1.4rem; text-transform: uppercase; transition: background .2s, transform .2s; }
+.button:hover, .button:focus { background: var(--wine-light); transform: translateY(-3px); }
+.button span { font-size: 1.2rem; margin-left: 1.5rem; }
+.scroll-hint { bottom: 3rem; color: var(--muted); font-size: .7rem; letter-spacing: .18em; position: absolute; right: 7vw; text-transform: uppercase; transform: rotate(90deg); z-index: 1; }
+.scroll-hint span { border-left: 1px solid var(--wine-light); display: inline-block; height: 35px; margin-right: 1rem; vertical-align: middle; }
+
+.section { padding: 8rem 8vw; }
+.section-heading { margin: 0 auto 3.5rem; max-width: 670px; text-align: center; }
+h2 { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; margin-bottom: 1.25rem; }
+.section-heading > p:last-child { color: var(--muted); line-height: 1.7; }
+.game-section { background: var(--black); }
+.game-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(3, 1fr); margin: auto; max-width: 1250px; }
+.game-card { background: var(--surface); border: 1px solid var(--line); transition: transform .25s, border-color .25s; }
+.game-card:hover { border-color: var(--wine); transform: translateY(-8px); }
+.game-image { align-items: end; background-position: center; background-size: cover; display: flex; height: 300px; overflow: hidden; position: relative; }
+.game-image::before, .character-image::before { background: linear-gradient(transparent, rgba(0,0,0,.85)); bottom: 0; content: ''; height: 65%; left: 0; position: absolute; right: 0; }
+.game-image span { font-family: var(--display); font-size: 2rem; font-weight: 700; padding: 1.5rem; position: relative; }
+.image-one { background-image: url('lost_heaven.jpg'); }
+.image-two { background-image: url('empire_bay.jpg'); }
+.image-three { background-image: url('mafia_3.jpg'); }
+.card-content { padding: 1.6rem; }
+.card-number, small { color: var(--wine-light); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; }
+.card-content h3 { font-family: var(--display); font-size: 1.5rem; line-height: 1.25; }
+.card-content p:not(.card-number) { color: var(--muted); font-family: Arial, sans-serif; font-size: .85rem; line-height: 1.7; min-height: 82px; }
+.card-content a { color: var(--cream); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+.card-content a span { color: var(--wine-light); font-size: 1.2rem; margin-left: .5rem; }
+
+.story-section { background: #100e0e; }
+.story-layout { align-items: start; display: grid; gap: 5rem; grid-template-columns: 1.4fr .8fr; margin: auto; max-width: 1050px; }
+.timeline-item { display: grid; gap: 1.5rem; grid-template-columns: 45px 1fr; padding: 0 0 2rem; position: relative; }
+.timeline-item:not(:last-child)::after { background: var(--line); bottom: 0; content: ''; left: 22px; position: absolute; top: 34px; width: 1px; }
+.timeline-item > span { align-items: center; background: var(--wine); border-radius: 50%; display: flex; font-size: .7rem; height: 45px; justify-content: center; letter-spacing: .08em; position: relative; width: 45px; z-index: 1; }
+.timeline-item h3 { font-family: var(--display); font-size: 1.45rem; margin-bottom: .45rem; }
+.timeline-item p { color: var(--muted); font-family: Arial, sans-serif; font-size: .86rem; line-height: 1.7; margin: 0; max-width: 560px; }
+.facts-card { background: var(--surface); border: 1px solid var(--line); padding: 2rem; }
+.facts-card dl { margin: 1.5rem 0 0; }
+.facts-card dl div { border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: .85rem 0; }
+.facts-card dt { color: var(--muted); font-size: .8rem; }
+.facts-card dd { color: var(--cream); font-size: .8rem; margin: 0; text-align: right; }
+
+.characters-section { background: #131010; }
+.character-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(3, 1fr); margin: auto; max-width: 1100px; }
+.character { background: var(--surface); border-bottom: 2px solid var(--wine); }
+.character-image { background-position: center; background-size: cover; height: 390px; position: relative; }
+.character-image span { bottom: 1rem; color: rgba(255,255,255,.45); font-family: var(--display); font-size: 4rem; left: 1rem; position: absolute; }
+.tommy { background-image: url('tommy_angelo.jpg'); }
+.vito { background-image: url('vito_scalleta.jpg'); }
+.lincoln { background-image: url('lincoln_clay.jpg'); }
+.character > div:last-child { padding: 1.3rem 1.5rem 1.6rem; }
+.character h3 { font-family: var(--display); font-size: 1.45rem; margin-bottom: .4rem; }
+.character p { color: var(--muted); font-style: italic; margin-bottom: 1rem; }
+
+.world-section { align-items: center; background: linear-gradient(110deg, rgba(13,12,12,.9), rgba(13,12,12,.65)), url('lost_heaven.jpg') center/cover; display: grid; gap: 6rem; grid-template-columns: 1fr 1fr; }
+.world-copy { max-width: 510px; }
+.world-copy p:last-child { color: var(--muted); font-family: Arial, sans-serif; line-height: 1.8; }
+.city { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 1.5rem; grid-template-columns: 55px 1fr 30px; padding: 1.25rem 0; }
+.city > span { color: var(--wine-light); font-size: .75rem; }
+.city h3 { font-family: var(--display); font-size: 1.5rem; margin-bottom: .2rem; }
+.city p { color: var(--muted); font-size: .8rem; margin: 0; }
+.city b { color: var(--muted); font-size: .75rem; font-weight: 400; }
+
+.gallery-section { background: var(--black); }
+.gallery { display: grid; gap: 1rem; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 280px 210px; margin: auto; max-width: 1200px; }
+.gallery img { height: 100%; object-fit: cover; width: 100%; filter: grayscale(45%); transition: filter .3s, transform .3s; }
+.gallery img:hover { filter: grayscale(0); transform: scale(1.02); }
+.gallery-wide { grid-row: span 2; }
+
+.site-footer { background: #0a0909; border-top: 1px solid var(--line); padding: 3rem 8vw 1.5rem; }
+.footer-top, .footer-bottom { align-items: center; display: flex; justify-content: space-between; }
+.footer-top { border-bottom: 1px solid var(--line); padding-bottom: 2rem; }
+.footer-top p { color: var(--muted); font-family: var(--display); font-style: italic; }
+.footer-info { color: var(--muted); display: grid; font-family: Arial, sans-serif; font-size: .72rem; gap: 3rem; grid-template-columns: 1fr 1fr; line-height: 1.6; padding: 2rem 0; }
+.footer-info strong { color: var(--cream); font-family: var(--body); letter-spacing: .1em; text-transform: uppercase; }
+.footer-bottom { border-top: 1px solid var(--line); color: #68615c; font-size: .7rem; padding-top: 1.5rem; }
+.validation-links { display: flex; gap: .7rem; }
+.validation-badge { align-items: center; border: 1px solid var(--line); display: flex; font-family: Arial, sans-serif; font-size: .62rem; font-weight: 700; letter-spacing: 0; transition: transform .2s, border-color .2s; }
+.validation-badge span { color: var(--cream); padding: .45rem .4rem; }
+.validation-badge b { color: #fff; font-size: .85rem; padding: .3rem .45rem; }
+.html-badge b { background: #e44d26; }
+.css-badge b { background: #1572b6; }
+.validation-badge:hover, .validation-badge:focus { border-color: var(--cream); transform: translateY(-2px); }
+
+@media (max-width: 800px) {
+    .site-header { align-items: flex-start; flex-direction: column; gap: 1rem; position: absolute; }
+    .main-nav { flex-wrap: wrap; gap: .7rem 1.2rem; }
+    .main-nav a { font-size: .68rem; }
+    .hero { min-height: 90vh; padding: 8rem 8vw; }
+    .scroll-hint { display: none; }
+    .section { padding: 5rem 6vw; }
+    .game-grid, .character-grid { grid-template-columns: 1fr; }
+    .game-image { height: 260px; }
+    .character-image { height: 350px; }
+    .story-layout { gap: 3rem; grid-template-columns: 1fr; }
+    .world-section { gap: 2rem; grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 160px 160px; }
+    .gallery-wide { grid-column: span 2; grid-row: auto; }
+    .footer-top, .footer-bottom { align-items: flex-start; flex-direction: column; gap: 1.2rem; }
+    .footer-info { gap: 1rem; grid-template-columns: 1fr; }
+}
+
+@media (max-width: 430px) {
+    .main-nav a { font-size: .62rem; }
+    h1 { font-size: 4rem; }
+    .hero-text { font-size: 1rem; }
+    .gallery { display: flex; flex-direction: column; }
+    .gallery img { height: 210px; }
+}
